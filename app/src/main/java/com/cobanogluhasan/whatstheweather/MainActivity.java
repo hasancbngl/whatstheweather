@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText cityName;
     TextView weatherCondition;
+    String url;
 
     public void findWeather(View view) {
 
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             DownloadTask downloadTask = new DownloadTask();
-            downloadTask.execute("http://api.openweathermap.org/data/2.5/weather?q="+ enCodedCityName +"&appid=d5243e88e613b56d105b9c23787d59e1");
+            downloadTask.execute(url+ enCodedCityName);
 
 
         } catch (UnsupportedEncodingException e) {
